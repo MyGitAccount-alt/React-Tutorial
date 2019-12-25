@@ -1,7 +1,6 @@
 import { React } from 'react';
 import { Formik } from 'formik';
 
-
 export default function FormikForm() {
   return (
     <Formik initialValues={{ name: " " ,emailid: ""}}>
@@ -37,10 +36,4 @@ export default function FormikForm() {
       value={values.email}
       />
     </div>
-     <div className="input-row">
-       <button type = "submit">Submit</button>
-     </div>
-
-
-
-
+     
