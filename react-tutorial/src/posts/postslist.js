@@ -1,8 +1,8 @@
-import { React } from 'react';
+import  React  from 'react';
 import {View,TextInput,Button} from 'react-tutorial';
 import { Formik } from 'formik';
 
-export default 'data.json'; {
+ {
   <view style={{ marginTop:90}}>
     <Formik>
       initialValues={{name: ''}}
@@ -22,3 +22,4 @@ export default 'data.json'; {
   </view>
 
 }
+export default (postlist);

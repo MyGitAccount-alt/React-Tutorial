@@ -1,31 +1,25 @@
-import {React} from 'react';
+import  React  from 'react';
+import {View,TextInput,Button} from 'react-tutorial';
 import { Formik } from 'formik';
+import Postlist from './posts/postslist'
 
-const BasicExample = () => (
-  <div>
-    <h1>My Form</h1>
-    <Formik
-      initialValues={{ name: 'Sambidha' }}
-      onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        }, 1000);
+ {
+  <view style={{ marginTop:90}}>
+    <Formik>
+      initialValues={{name: ''}}
+      onSubmit={(values) => {
+        alert(JSON.stringify(values));
       }}
-    >
-      {props => (
-        <form onSubmit={props.handleSubmit}>
-          <input
-            type="text"
-            onChange={props.handleChange}
-            onBlur={props.handleBlur}
-            value={props.values.name}
-            name="name"
-          />
-          {props.errors.name && <div id="feedback">{props.errors.name}</div>}
-          <button type="submit">Submit</button>
-        </form>
+      {formikProps => (
+        <React.Fragment>
+          <Text Input />
+          style={{borderWidth: 1,borderColor: 'blue',marginBottom: 3}}
+          onChangeText={formikProps.handleChange("name")}
+          <Button title="Submit" onPress={formikProps.handleSubmit} />
+      } 
+        </React.Fragment>
       )}
     </Formik>
-  </div>
-);
+  </view>
+
+}
