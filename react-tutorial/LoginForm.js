@@ -1,39 +1,24 @@
 import { React } from 'react';
+import {View,TextInput,Button} from 'react-tutorial';
 import { Formik } from 'formik';
 
-export default function FormikForm() {
-  return (
-    <Formik initialValues={{ name: " " ,emailid: ""}}>
-      {({ values,errors,touched,handleChange,handleBlur}) => (
-    <form>
-      {JSON,stringify(values)}
-      <div className="input-row">
-        <label htmlFor="name">Name  </label>
-        <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Enter your name"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        value={values.name}
-        />
-      </div>
-    </form>
-    )}
+export default 'data.json'; {
+  <view style={{ marginTop:90}}>
+    <Formik>
+      initialValues={{name: ''}}
+      onSubmit={(values) => {
+        alert(JSON.stringify(values));
+      }}
+      {formikProps => (
+        <React.Fragment>
+          <Text Input />
+          style={{borderWidth: 1,borderColor: 'blue',marginBottom: 3}}
+          onChangeText={formikProps.handleChange("name")}
+          <Button title="Submit" onPress={formikProps.handleSubmit} />
+      } 
+        </React.Fragment>
+      )}
     </Formik>
-  );
-      }
-      <div className="input-row">
-      <label htmlFor="email">Email</label>
-      <input
-      type="email"
-      name="email"
-      id="email"
-      placeholder="Enter your email"
-      onChange={handleChange}
-      onBlur={handleBlur}
-      value={values.email}
-      />
-    </div>
-     
+  </view>
+
+}
